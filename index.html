@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+
+    <title>Carcentral | Documentation </title>
+
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/stroke.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/prettyPhoto.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <link rel="stylesheet" type="text/css" href="js/syntax-highlighter/styles/shCore.css" media="all">
+    <link rel="stylesheet" type="text/css" href="js/syntax-highlighter/styles/shThemeRDark.css" media="all">
+
+    <!-- CUSTOM -->
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+
+    <script>
+        var mybutton = document.getElementById("myBtn");
+        window.onscroll = function() {scrollFunction()};
+        function scrollFunction() {
+            if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+        function topFunction() {
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+            document.documentElement.scrollTo({ top: 0, behavior: 'smooth' })
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelector('#mode').addEventListener('click',()=>{
+                document.querySelector('html').classList.toggle('dark');
+            })
+        });
+
+
+    </script>
+
+    <div id="wrapper">
+
+        <div id="mode" >
+            <div class="dark">
+                <svg aria-hidden="true" viewBox="0 0 512 512">
+                    <title>lightmode</title>
+                    <path fill="currentColor" d="M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z"></path>
+                </svg>
+            </div>
+            <div class="light">
+                <svg aria-hidden="true" viewBox="0 0 512 512">
+                    <title>darkmode</title>
+                    <path fill="currentColor" d="M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z"></path>
+                </svg>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <section id="top" class="section docs-heading">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="big-title text-center">
+                            <img class="logo" src="images/logo.png" alt="">
+                            
+                            <p class="lead">carcentral / API documentation version 1.0</p>
+                        </div>
+                        <!-- end title -->
+                    </div>
+                    <!-- end 12 -->
+                </div>
+                <!-- end row -->
+
+                <hr>
+
+            </section>
+            <!-- end section -->
+
+            <div class="row">
+
+                <div class="col-md-3">
+                    <nav class="docs-sidebar" data-spy="affix" data-offset-top="300" data-offset-bottom="200" role="navigation">
+                        <ul class="nav">
+                            <li><a href="#line1">Getting Started</a>
+                                <ul class="nav">
+                                    <li><a href="#line1_1">API Host</a></li>
+                                    <li><a href="#line1_2">Interactuar con la API</a></li>
+                                    <li><a href="#line1_3">Codigos de estado de respuesta HTTP</a></li>
+                                    <li><a href="#line1_4">Formato de respuestas de la API</a></li>
+                                    <li><a href="#line1_5">Como autentificarse en la API</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#line2">Autentificacion</a></li>
+                            <li><a href="#line3">Agregar Seminuevo</a></li>
+                            <li><a href="#line4">Actualizar seminuevo</a></li>
+                            <li><a href="#line5">Desactivar seminuevo</a></li>
+                            <li><a href="#line6">Apartar seminuevo</a></li>
+                            <li><a href="#line7">Consultar seminuevos</a></li>
+                            <li><a href="#line8">Consultar seminuevo por id</a></li>
+                            <li><a href="#line9">Consultar marcas</a></li>
+                            <li><a href="#line10">Consultar leads</a></li>
+                            <li><a href="#line11">Copyright and license</a></li>
+                        </ul>
+                    </nav >
+                </div>
+                <div class="col-md-9">
+                    <section class="welcome">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                               <h2 class="dark-text">Introduction<hr></h2>
+                                <div class="row">
+
+                                    <div class="col-md-12 full">
+                                        <div class="intro1">
+                                            <ul>
+                                                <li><strong>Item Name : </strong>Gather Responsive Event Template</li>
+                                                <li><strong>Item Version : </strong> v 1.0</li>
+                                                <li><strong>Author  : </strong> <a href="http://themeforest.net/user/surjithctly" target="_blank">Surjith S M</a></li>
+                                                <li><strong>Support Forum : </strong> <a href="https://support.surjithctly.in/forums" target="_blank">https://support.surjithctly.in/forums</a></li>
+                                                <li><strong>License : </strong> <a href="#" target="_blank">Un License</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <hr>
+                                        <div>
+                                            <p>First of all, Thank you so much for purchasing this template and for being my loyal customer.
+                                                <strong>You are awesome!</strong>
+                                                <br> You are entitled to get free lifetime updates to this product + exceptional support from the author directly.
+                                            </p>
+
+                                            <p>This documentation is to help you regarding each step of customization. Please go through the documentation carefully to understand how this template is made and how to edit this properly. Basic HTML and CSS knowledge is required to customize this template. You may learn basics <a href="http://www.w3schools.com/" target="_blank">here</a>, <a href="https://developer.mozilla.org/" target="_blank">here</a> and <a href="http://learn.shayhowe.com/html-css/building-your-first-web-page/" target="_blank">here</a>. </p>
+                                            
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- end row -->
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="line1" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Getting Started <hr></h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+                        <h4 id="line1_1">API Host</h4>
+                        <p>Todas las peticiones que se realicen a la API de Mensagia deben ser enviadas a la siguiente URL:</p>
+                        <p>
+                            <span class="method url">https://carcentral.mx/inventory/api/auth/</span>                                                
+                        </p>
+                        <h4 id="line1_2">Interactuar con la API</h4>
+                        <p>Si quieres probar nuestra API de una manera rápida te recomendamos el uso de <a href="https://www.postman.com/">PostMan</a>. Postman es una extensión de Google Chrome que permite interactuar con HTTP API's de forma sencilla a través de una interfaz amigable para construir peticiones y obtener respuestas.</p>
+
+                        <h4 id="line1_3">Codigos de estado de respuesta HTTP</h4>
+                        <p>La API de Mensagia utiliza los <a href="https://github.com/for-GET/know-your-http-well/blob/master/status-codes.md">Códigos de estado de respuesta HTTP</a> más utilizados.</p>
+                        <p>Puedes considerar todas las respuestas que no sean devueltas con un código HTTP 200 como un error.</p>
+
+                        <h4 id="line1_4">Formato de respuestas de la API</h4>
+                        <p>
+                            Siempre que realices una petición correcta a la API obtendrás un código de respuesta <code>HTTP 200</code>
+                        </p>                        
+                        <div class="row">
+                            <div class="col-md-12">                                
+
+                                <h4>Ejemplo de respuestas</h4>
+                                
+                                <pre class="brush: html; highlight: [2,4]">
+                                    {
+                                        "data": {
+                                        }
+                                    }
+                                </pre>
+                                <p>Si la petición es correcta, te devolveremos la siguiente estructura</p>
+                                
+                                
+                                <pre class="brush: html">
+                                    {
+                                        "errors": {
+                                        }
+                                    }
+                                </pre>
+                                <p>Si la petición es incorrecta, te devolveremos la siguiente estructura</p>
+                                                                
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+                        <h4 id="line1_5">Como autentificarse en la API</h4>
+                        <p>
+                            Para usar los métodos de la API, debes obtener un token de acceso válido. Una vez obtengas un token válido, deberás adjuntarlo en las cabeceras HTTP con cada petición que realices a la API y servirá para autentifacarte en la API de Carcentral.mx. Este método proporciona un acceso seguro a la API.
+                        </p>   
+                        <p class="content code">
+                            <code>
+                                Authorization: Bearer eyJXXXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vYXBpLm1lbnNhZgghLmRldi92MS9sb2dpbiIsImlhdCI6MTQ2NDM1NDY5OSwiZXhwIjoxNDY0MzU4Mjk5LCJuYmYisfE0NjQzNTQ2OTksImp0aSI6IjIyNDg4Y2IxM2RkNzZlODZjM2NhZWZhZjNhMDBkMjkzIiwic3ViIjoxNH0.F3q4ckNbI8sMg9RX_iRSyrEmGWW3oyO8dMcasKl5xer                                
+                            </code>
+                        </p>
+
+                    </section>
+                    <!-- end section -->
+
+                    <section id="line2" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Autentificacion <hr></h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <hr>
+                        <p>Antes de realizar cualquier petición a la API, debes obtener un token válido. Una vez obtengas un token válido, podrás realizar peticiones a la API de Carcentral.mx</p>
+
+                        <h4>Obtener un token</h4>
+                        <p>
+                            Obtén un token válido para poder realizar peticiones a la API
+                        </p>   
+                        <h5>HTTP Request</h5>
+                        <p>
+                            <span class="method post">POST</span>
+                            <span class="method url">https://carcentral.mx/inventory/api/auth/login</span>
+                        </p>
+                        <h5>Query Parameters</h5>
+                        <table><thead>
+                            <tr>
+                            <th>Parameter</th>
+                            <th>Description</th>
+                            </tr>
+                            </thead><tbody>
+                            <tr>
+                            <td>email</td>
+                            <td><span class="parameters_type">string</span> <em>(required)</em> <span class="parameters_example">Example: email@myemail.com</span> <br>Un email válido de un usuario activo de Carcentral</td>
+                            </tr>
+                            <tr>
+                            <td>password</td>
+                            <td><span class="parameters_type">string</span> <em>(required)</em> <span class="parameters_example">Example: mypassword</span> <br>Una contraseña válida.</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                        <pre class="brush: html">
+                            {
+                                "access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiNGE0Y2E4YmVmMjJhYTZmZmU2NGU1MGNhNDg5YjM3ODFmMzcwZmJhODU4ZDY3ZTM2M2Q2YmY0MWRkNTcwNTUzNDI4OWUzZDhiMzU0MDcyMDgiLCJpYXQiOjE2MDY5MjY0MDQsIm5iZiI6MTYwNjkyNjQwNCwiZXhwIjoxNjM4NDYyNDA0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.SfteO45AvXTlgdNvY_iRwQh9bmYzYw8gZnc0z8FniWDLEHPjBmKo2N1sH85Mg3sl-ixIuqWK6kUDrOGyPl7tWfyWK8nhaQ8xU83rpzK3JF3Z8Vwe3y_y2iQvn3nAFayeKou2kcHUFc_SWXKZck9xdQZo-f6vw6q4sCDkw1xjyv87xpyhqRKxyToYV6_J5YHLrj1eCUhjI7z6nVULhez2ZLJPU9ZoyluRJrgSbyUHyjF2v62m6RsBkYAtcUYy08Mq2bGBBgyrR2abA1wMGxDzhte2lLpd8WUlos4r0yZDaMEECcw1tqARqyfjR9J2DDSnxH1EdpbEdCESEoxTSEkQytQULTzCzfDDFYZ_pSBByRkvUJW7tX8rm0i6P57slG1VNnVJqhMGfzwHXk9N3mXfd-pQ1n0VTZr2M63wFqu1oGsyY7h5DUyjd9-J4Jg-xbO5NhRFLpio-1NEOs5BDdFfqSHxY23EyYHLIqzfSkXggISxKSja1Go1--DwWpF9GywmcNyDnvCXCTNF7bMSz7H5eC_g_em0EPytMgUIsmnDplqvfwLRKaCCoJQ8z3mn571OyVoUIVFT14g7LlzjGm1iXKms42ZM3nhRbnC1nDY8s-Dr6ymxRPpE8Hyp_Nma0AqOifRbRhI6YnL4GmyQec2HFreuBXNBrrNuSOBmynK67CQ",
+                                "token_type": "Bearer",
+                                "expires_at": "2021-12-02 10:26:44"
+                            }
+                        </pre>
+                        <p>Response <code>200</code></p>
+
+                        <pre class="brush: html">
+                            {
+                                "message": "Unauthorized"
+                            }
+                        </pre>
+                        <p>Response <code>401</code></p>
+                    </section>
+                    <!-- end section -->
+
+                    <section id="line3" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Agregar Seminuevo <hr></h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <p>Este método te permite crear un anucio de un seminuevo</p>
+
+                        <h5>HTTP Request</h5>
+                        <p>
+                            <span class="method put">PUT</span>
+                            <span class="method url">https://carcentral.mx/inventory/api/auth/addPreowned</span>
+                        </p>
+                        <h5>Query Parameters</h5>
+                        <table><thead>
+                            <tr>
+                            <th>Parameter</th>
+                            <th>Description</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>nameBrand</td>
+                                    <td><span class="parameters_type">string</span> <em>(required)</em> <span class="parameters_example">Example: chevrolet</span> <br>Nombre de la marca</td>
+                                </tr>
+                                <tr>
+                                    <td>descriptionBrand</td>
+                                    <td><span class="parameters_type">string</span> <span class="parameters_example">Example: Esta es la descripción de la marca chevrolet</span> <br>Breve descripción opcional</td>
+                                </tr>
+                                <tr>
+                                    <td>veh_tipoauto</td>
+                                    <td><span class="parameters_type">string</span> <em>(required)</em> <span class="parameters_example">Example: Aveo 6 PTAS</span> <br>Descripción de la unidad</td>
+                                </tr>
+                                <tr>
+                                    <td>veh_anmodelo</td>
+                                    <td><span class="parameters_type">int</span> <em>(required)</em> <span class="parameters_example">Example: 2020</span> <br>Año modelo</td>
+                                </tr>
+                                <tr>
+                                    <td>veh_numserie</td>
+                                    <td><span class="parameters_type">string</span> <em>(required | min:17 | max:17)</em> <span class="parameters_example">Example: AN48JIEALO9123SJE</span> <br>VIN o número de serie del vehículo</td>
+                                </tr>
+                                <tr>
+                                    <td>veh_kilometr</td>
+                                    <td><span class="parameters_type">int</span> <em>(required)</em> <span class="parameters_example">Example: 20000</span> <br>Kilometraje</td>
+                                </tr>
+                                <tr>
+                                    <td>veh_colorexte</td>
+                                    <td><span class="parameters_type">string</span> <em>(required)</em> <span class="parameters_example">Example: rojo</span> <br>Color exterior</td>
+                                </tr>
+                                <tr>
+                                    <td>veh_colorinte</td>
+                                    <td><span class="parameters_type">string</span> <em>(required)</em> <span class="parameters_example">Example: negro</span> <br>Color interior</td>
+                                </tr>
+                                <tr>
+                                    <td>veh_stransmision</td>
+                                    <td><span class="parameters_type">string</span> <em>(required | min:3 | max:3)</em> <span class="parameters_example">Example: aut</span> <br>Si el vehículo es manual se llena el campo con "MAN" y si el vehículo es automatico se llema con "AUT"</td>
+                                </tr>
+                                <tr>
+                                    <td>veh_sfecadqui</td>
+                                    <td><span class="parameters_type">string</span> <em>(required | date_format:Y-m-d)</em> <span class="parameters_example">Example: 2020-11-30</span> <br>Fecha de adquisición, este campo se llena con formato año, mes, día por ejemplo: 2020-01-01</td>
+                                </tr>
+                                <tr>
+                                    <td>origen</td>
+                                    <td><span class="parameters_type">string</span> <em>(required)</em> <span class="parameters_example">Example: ABP</span> <br>CODIGO DE LA EMPRESA</td>
+                                </tr>
+                                <tr>
+                                    <td>veh_simppvta</td>
+                                    <td><span class="parameters_type">int</span> <em>(required)</em> <span class="parameters_example">Example: 200000</span> <br>Precio del vehículo en la página</td>
+                                </tr>
+                                <tr>
+                                    <td>carline</td>
+                                    <td><span class="parameters_type">string</span> <em>(required)</em> <span class="parameters_example">Example: aveo</span> <br>EL CARLINE, corresponde al grupo de cada vehículo</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                        <pre class="brush: html">
+                            {
+                                "created": true,
+                                "id": 207
+                            }
+                        </pre>
+                        <p>Response <code>200</code></p>
+
+                        <pre class="brush: html">
+                            {
+                                "created": false,
+                                "errors": [
+                                    "The name brand field is required.",
+                                    "The veh tipoauto field is required.",
+                                    "The veh anmodelo field is required.",
+                                    "The veh numserie field is required.",
+                                    "The veh kilometr field is required.",
+                                    "The veh colorexte field is required.",
+                                    "The veh colorinte field is required.",
+                                    "The veh stransmision field is required.",
+                                    "The veh sfecadqui field is required.",
+                                    "The origen field is required.",
+                                    "The veh simppvta field is required.",
+                                    "The carline field is required."
+                                ]
+                            }
+                        </pre>
+                        <p>Response <code>200</code> si no se llenaron los campos correctamente</p>
+
+                        <pre class="brush: html">
+                            {
+                                "created": false,
+                                "errors": "Error: Vehicle already exists"
+                            }
+                        </pre>
+                        <p>Response <code>200</code> si el vehículo ya existe</p>
+
+                    </section>
+                    <!-- end section -->
+
+                    <section id="line4" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Actualizar seminuevo <hr></h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <p>Este método te permite actualizar un anucio de un seminuevo</p>
+
+                        <h5>HTTP Request</h5>
+                        <p>
+                            <span class="method put">PUT</span>
+                            <span class="method url">https://carcentral.mx/inventory/api/auth/updatePreowned</span>
+                        </p>
+                        <h5>Query Parameters</h5>
+                        <table><thead>
+                            <tr>
+                            <th>Parameter</th>
+                            <th>Description</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td><span class="parameters_type">int</span> <em>(required)</em> <span class="parameters_example">Example: 207</span> <br>Este es el identificador del seminuevo</td>
+                                </tr>
+                                <tr>
+                                    <td>veh_tipoauto</td>
+                                    <td><span class="parameters_type">string</span> <em>(required)</em> <span class="parameters_example">Example: Aveo 6 PTAS</span> <br>Descripción de la unidad</td>
+                                </tr>
+                                <tr>
+                                    <td>veh_anmodelo</td>
+                                    <td><span class="parameters_type">int</span> <em>(required)</em> <span class="parameters_example">Example: 2020</span> <br>Año modelo</td>
+                                </tr>
+                                <tr>
+                                    <td>veh_numserie</td>
+                                    <td><span class="parameters_type">string</span> <em>(required | min:17 | max:17)</em> <span class="parameters_example">Example: AN48JIEALO9123SJE</span> <br>VIN o número de serie del vehículo</td>
+                                </tr>
+                                <tr>
+                                    <td>veh_kilometr</td>
+                                    <td><span class="parameters_type">int</span> <em>(required)</em> <span class="parameters_example">Example: 20000</span> <br>Kilometraje</td>
+                                </tr>
+                                <tr>
+                                    <td>veh_colorexte</td>
+                                    <td><span class="parameters_type">string</span> <em>(required)</em> <span class="parameters_example">Example: rojo</span> <br>Color exterior</td>
+                                </tr>
+                                <tr>
+                                    <td>veh_colorinte</td>
+                                    <td><span class="parameters_type">string</span> <em>(required)</em> <span class="parameters_example">Example: negro</span> <br>Color interior</td>
+                                </tr>
+                                <tr>
+                                    <td>veh_stransmision</td>
+                                    <td><span class="parameters_type">string</span> <em>(required | min:3 | max:3)</em> <span class="parameters_example">Example: aut</span> <br>Si el vehículo es manual se llena el campo con "MAN" y si el vehículo es automatico se llema con "AUT"</td>
+                                </tr>
+                                <tr>
+                                    <td>veh_sfecadqui</td>
+                                    <td><span class="parameters_type">string</span> <em>(required | date_format:Y-m-d)</em> <span class="parameters_example">Example: 2020-11-30</span> <br>Fecha de adquisición, este campo se llena con formato año, mes, día por ejemplo: 2020-01-01</td>
+                                </tr>
+                                <tr>
+                                    <td>origen</td>
+                                    <td><span class="parameters_type">string</span> <em>(required)</em> <span class="parameters_example">Example: ABP</span> <br>CODIGO DE LA EMPRESA</td>
+                                </tr>
+                                <tr>
+                                    <td>veh_simppvta</td>
+                                    <td><span class="parameters_type">int</span> <em>(required)</em> <span class="parameters_example">Example: 200000</span> <br>Precio del vehículo en la página</td>
+                                </tr>
+                                <tr>
+                                    <td>carline</td>
+                                    <td><span class="parameters_type">string</span> <em>(required)</em> <span class="parameters_example">Example: aveo</span> <br>EL CARLINE, corresponde al grupo de cada vehículo</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                        <pre class="brush: html">
+                            {
+                                "updated": true,
+                                "id": 207
+                            }
+                        </pre>
+                        <p>Response <code>200</code></p>
+
+                        <pre class="brush: html">
+                            {
+                                "updated": false,
+                                "errors": [
+                                    "The id field is required.",
+                                    "The veh anmodelo field is required.",
+                                    "The veh numserie field is required.",
+                                    "The veh kilometr field is required.",
+                                    "The veh colorexte field is required.",
+                                    "The veh colorinte field is required.",
+                                    "The veh stransmision field is required.",
+                                    "The veh sfecadqui field is required.",
+                                    "The origen field is required.",
+                                    "The veh simppvta field is required.",
+                                    "The carline field is required."
+                                ]
+                            }
+                        </pre>
+                        <p>Response <code>200</code> si no se llenaron los campos correctamente</p>
+
+                    </section>
+                    <!-- end section -->
+
+                    <section id="line5" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Desactivar seminuevo <hr></h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <p>Este método te permite desactivar un anucio de un seminuevo</p>
+
+                        <h5>HTTP Request</h5>
+                        <p>
+                            <span class="method put">PUT</span>
+                            <span class="method url">https://carcentral.mx/inventory/api/auth/disablePreowned</span>
+                        </p>
+                        <h5>Query Parameters</h5>
+                        <table><thead>
+                            <tr>
+                            <th>Parameter</th>
+                            <th>Description</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td><span class="parameters_type">int</span> <em>(required)</em> <span class="parameters_example">Example: 207</span> <br>Este es el identificador del seminuevo</td>
+                                </tr>                                
+                            </tbody>
+                        </table>
+
+                        <pre class="brush: html">
+                            {
+                                "disabled": true,
+                                "id": 207
+                            }
+                        </pre>
+                        <p>Response <code>200</code></p>
+
+                        <pre class="brush: html">
+                            {
+                                "disabled": false,
+                                "errors": [
+                                    "The id field is required."
+                                ]
+                            }
+                        </pre>
+                        <p>Response <code>200</code> si no se llenaron los campos correctamente</p>                        
+
+                    </section>
+                    <!-- end section -->
+
+                    <section id="line6" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Apartar seminuevo<hr></h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+
+
+                    </section>
+                    <!-- end section -->
+
+                    <section id="line7" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Consultar seminuevos <hr></h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <p>Este método te permite mostrar todos los anucios dependiendo del origen</p>
+
+                        <h5>HTTP Request</h5>
+                        <p>
+                            <span class="method get">GET</span>
+                            <span class="method url">https://carcentral.mx/inventory/api/auth/getpreownedorigen/{origen}</span>
+                        </p>
+                        <h5>Query Parameters</h5>
+                        <table><thead>
+                            <tr>
+                            <th>Parameter</th>
+                            <th>Description</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>origen</td>
+                                    <td><span class="parameters_type">string</span> <em>(required)</em> <span class="parameters_example">Example: PRUEBA</span> <br>CODIGO DE LA EMPRESA</td>
+                                </tr>                                
+                            </tbody>
+                        </table>
+
+                        <pre class="brush: html">
+                            [
+                                {
+                                    "id": 199,
+                                    "veh_noinventa": null,
+                                    "ubicacion": null,
+                                    "veh_tipoauto": "Aveo 14 PTAS",
+                                    "veh_anmodelo": "2020",
+                                    "veh_numserie": "3G1J85CC1HS5299A1",
+                                    "veh_kilometr": 1000,
+                                    "veh_colorexte": "rojo",
+                                    "veh_colorinte": "negro",
+                                    "veh_stransmision": "aut",
+                                    "veh_sfecadqui": "2020-11-03 00:00:00",
+                                    "antiguedad": null,
+                                    "origen": "PRUEBA",
+                                    "veh_simppvta": 40000,
+                                    "veh_pcompguia": null,
+                                    "veh_pventguia": null,
+                                    "tipo": null,
+                                    "situacion": null,
+                                    "veh_puertas": null,
+                                    "veh_sctoacond": null,
+                                    "veh_noplacas": null,
+                                    "tipoauto": null,
+                                    "tipocomp": null,
+                                    "observaciones": null,
+                                    "veh_stipadqui": null,
+                                    "veh_ssubtotal": null,
+                                    "veh_siva": null,
+                                    "veh_impfactplan": null,
+                                    "costo": null,
+                                    "promocion": null,
+                                    "poliza": null,
+                                    "available": "false",
+                                    "carline": "spark",
+                                    "brand_id": 1,
+                                    "created_at": "2020-11-27T19:30:29.000000Z",
+                                    "updated_at": "2020-11-27T19:34:29.000000Z"
+                                },
+                                {
+                                    "id": 207,
+                                    "veh_noinventa": null,
+                                    "ubicacion": null,
+                                    "veh_tipoauto": "Aveo 6 PTAS",
+                                    "veh_anmodelo": "2020",
+                                    "veh_numserie": "0000JIEDLO9123SJE",
+                                    "veh_kilometr": 20000,
+                                    "veh_colorexte": "rojo",
+                                    "veh_colorinte": "negro",
+                                    "veh_stransmision": "aut",
+                                    "veh_sfecadqui": "2020-11-30 00:00:00",
+                                    "antiguedad": null,
+                                    "origen": "PRUEBA",
+                                    "veh_simppvta": 2000000,
+                                    "veh_pcompguia": null,
+                                    "veh_pventguia": null,
+                                    "tipo": null,
+                                    "situacion": null,
+                                    "veh_puertas": null,
+                                    "veh_sctoacond": null,
+                                    "veh_noplacas": null,
+                                    "tipoauto": null,
+                                    "tipocomp": null,
+                                    "observaciones": null,
+                                    "veh_stipadqui": null,
+                                    "veh_ssubtotal": null,
+                                    "veh_siva": null,
+                                    "veh_impfactplan": null,
+                                    "costo": null,
+                                    "promocion": null,
+                                    "poliza": null,
+                                    "available": "false",
+                                    "carline": "aveo",
+                                    "brand_id": 1,
+                                    "created_at": "2020-12-02T19:18:57.000000Z",
+                                    "updated_at": "2020-12-02T19:30:17.000000Z"
+                                }
+                            ]
+                        </pre>
+                        <p>Response <code>200</code></p> 
+
+                    </section>
+                    <!-- end section -->
+
+                    <section id="line8" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Consultar seminuevo por id <hr></h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+                        <p>Este método te permite mostrar todos los anucios dependiendo del id</p>
+
+                        <h5>HTTP Request</h5>
+                        <p>
+                            <span class="method get">GET</span>
+                            <span class="method url">https://carcentral.mx/inventory/api/auth/getpreownedid/{id}</span>
+                        </p>
+                        <h5>Query Parameters</h5>
+                        <table><thead>
+                            <tr>
+                            <th>Parameter</th>
+                            <th>Description</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td><span class="parameters_type">int</span> <em>(required)</em> <span class="parameters_example">Example: id</span> <br>Identificador del seminuevo</td>
+                                </tr>                                
+                            </tbody>
+                        </table>
+
+                        <pre class="brush: html">
+                            {
+                                "id": 1,
+                                "veh_noinventa": "957",
+                                "ubicacion": "SEMINUEVOS",
+                                "veh_tipoauto": "TRAVERSE SUV B LT",
+                                "veh_anmodelo": "2015",
+                                "veh_numserie": "1GNKR8KDXFJ105670",
+                                "veh_kilometr": 118363,
+                                "veh_colorexte": "NEGRO GRAFITO METALICO",
+                                "veh_colorinte": "NEGRO/ARCILLA",
+                                "veh_stransmision": "aut",
+                                "veh_sfecadqui": "2020-01-31 00:00:00",
+                                "antiguedad": "213",
+                                "origen": "ABP",
+                                "veh_simppvta": 275000,
+                                "veh_pcompguia": "246300.00000",
+                                "veh_pventguia": "282500.00000",
+                                "tipo": "U",
+                                "situacion": "DISPONIBLE",
+                                "veh_puertas": "5",
+                                "veh_sctoacond": ".00000",
+                                "veh_noplacas": "UAC8718",
+                                "tipoauto": "PASAJEROS",
+                                "tipocomp": "COMPRA PERSONA FISICA",
+                                "observaciones": "",
+                                "veh_stipadqui": "COMPAR",
+                                "veh_ssubtotal": "225000.00000",
+                                "veh_siva": ".00000",
+                                "veh_impfactplan": "225000.00000",
+                                "costo": 225000,
+                                "promocion": null,
+                                "poliza": "20",
+                                "available": "false",
+                                "carline": "traverse",
+                                "brand_id": 1,
+                                "created_at": "2020-09-01T02:17:11.000000Z",
+                                "updated_at": "2020-10-13T18:13:53.000000Z"
+                            }
+                        </pre>
+                        <p>Response <code>200</code></p>                                                 
+
+                    </section>
+                    <!-- end section -->
+
+                    <section id="line9" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Consultar marcas <hr></h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+                        <p>Este método te permite mostrar todas las marcas</p>
+
+                        <h5>HTTP Request</h5>
+                        <p>
+                            <span class="method get">GET</span>
+                            <span class="method url">https://carcentral.mx/inventory/api/auth/getbrands</span>
+                        </p>
+
+                        <pre class="brush: html">
+                            [
+                                {
+                                    "name": "Chevrolet",
+                                    "description": "Chevrolet"
+                                },
+                                {
+                                    "name": "Volkswagen",
+                                    "description": "Volkswagen"
+                                }
+                            ]
+                        </pre>
+                        <p>Response <code>200</code></p> 
+                        
+
+                    </section>
+                    <!-- end section -->
+
+                    <section id="line10" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Consultar leads<hr></h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+                        <p>Este método te permite mostrar todos los leads dependiendo del origen</p>
+
+                        <h5>HTTP Request</h5>
+                        <p>
+                            <span class="method get">GET</span>
+                            <span class="method url">https://carcentral.mx/inventory/api/auth/showleads/{origen}</span>
+                        </p>
+                        <h5>Query Parameters</h5>
+                        <table><thead>
+                            <tr>
+                            <th>Parameter</th>
+                            <th>Description</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>origen</td>
+                                    <td><span class="parameters_type">string</span> <em>(required)</em> <span class="parameters_example">Example: PRUEBA</span> <br>CODIGO DE LA EMPRESA</td>
+                                </tr>                                
+                            </tbody>
+                        </table>
+
+                        <pre class="brush: html">
+                            [
+                                {
+                                    "id": 20,
+                                    "name": "David",
+                                    "surname": "Hernandez Hernandez",
+                                    "email": "domosapiens.mexico@gmail.com",
+                                    "gender": "",
+                                    "lada": "52",
+                                    "phone": "2211691671",
+                                    "origen": "ABP",
+                                    "veh_tipoauto": "X3 SDRIVE20IA",
+                                    "veh_anmodelo": "2017",
+                                    "veh_numserie": "WBAWY9106H0V29449",
+                                    "veh_kilometr": 53000,
+                                    "veh_stransmision": "aut",
+                                    "veh_simppvta": 430000
+                                }
+                            ]
+                        </pre>
+                        <p>Response <code>200</code></p>
+
+                    </section>
+                    <!-- end section -->
+
+                    <section id="line11" class="section">
+
+                        <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h2 class="dark-text">Copyright and license <hr></h2>
+                            </div>
+                            <!-- end col -->
+                        </div>
+                        <!-- end row -->
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                
+                                <p>Code released under the <a href="#" target="_blank">Un License</a> License.</p>                        
+                                <p>For more information about copyright and license check <a href="https://choosealicense.com/" target="_blank">choosealicense.com</a>.</p>
+                            
+                            </div>
+                        </div>
+                        <!-- end row -->
+
+                    </section>
+                    <!-- end section -->
+                </div>
+                <!-- // end .col -->
+
+            </div>
+            <!-- // end .row -->
+
+        </div>
+        <!-- // end container -->
+
+    </div>
+    <!-- end wrapper -->
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/retina.js"></script>
+    <script src="js/jquery.fitvids.js"></script>
+    <script src="js/wow.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+
+    <!-- CUSTOM PLUGINS -->
+    <script src="js/custom.js"></script>
+    <script src="js/main.js"></script>
+
+    <script src="js/syntax-highlighter/scripts/shCore.js"></script>
+    <script src="js/syntax-highlighter/scripts/shBrushXml.js"></script>
+    <script src="js/syntax-highlighter/scripts/shBrushCss.js"></script>
+    <script src="js/syntax-highlighter/scripts/shBrushJScript.js"></script>
+
+</body>
+
+</html>
